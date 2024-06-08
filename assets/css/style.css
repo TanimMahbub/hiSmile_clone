@@ -1062,12 +1062,6 @@ header {
     width: 50%;
 }
 
-@media (min-width: 768px) {
-    .insta-block .section-content ul>li {
-        width: 25%;
-    }
-}
-
 .insta-block .section-content ul>li>a {
     display: flex;
     align-items: center;

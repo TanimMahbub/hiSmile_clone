@@ -1588,6 +1588,16 @@ header {
         margin-block: 10px;
         font-size: 15px;
     }
+    .subscribe-section .section-content h2 {
+        font-size: 22px;
+        line-height: 32px;
+    }
+    .subscribe-section .section-content p {
+        font-size: 13px;
+        line-height: 22px;
+        font-weight: 400;
+        text-wrap: wrap;
+    }
     .footer-middle {background: #FAFAFC;}
     .footer-middle .section-content {
         flex-direction: column;

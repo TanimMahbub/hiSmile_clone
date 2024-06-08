@@ -1154,8 +1154,8 @@ header {
     height: 42px;
     border: none;
     padding: 15px;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 400;
     border-radius: 6px;
 }
 
@@ -1165,6 +1165,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--theme-ash-2);
 }
 
 .footer-middle .section-content {
@@ -1458,10 +1459,20 @@ header {
     }
     .subscribe-section .section-content {
         flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        gap: 10px;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 10px;
         padding: 30px;
+    }
+    .subscribe-section .section-content form {
+        align-self: baseline;
+    }
+    .best-sellers-content .section-header .theme-btn {
+        text-transform: capitalize;
+    }
+    .insta-block .section-header .titles h2 {
+        display: flex;
+        flex-direction: column;
     }
     .footer-middle .section-content {
         flex-wrap: wrap;
@@ -1511,6 +1522,18 @@ header {
     .collection-banner .section-content {
         padding: 20px;
         height: 400px;
+        background: url(../images/hero/02.jpg) no-repeat left top / cover;
+    }
+    .collection-banner .section-content .section-header h2 {
+        font-size: 28px;
+    }
+    .collection-banner .section-content .section-header p {
+        margin-block: 10px 15px;
+    }
+    .collection-banner .section-content .theme-btn {
+        display: flex;
+        justify-content: center;
+        width: 70%;
     }
     .insta-block .section-content ul>li {
         width: 50%;
@@ -1539,35 +1562,61 @@ header {
 }
 
 @media(max-width: 575px) {
+    .best-sellers-content .section-header .theme-btn {
+        padding: 5px 15px;
+    }
+    .best-sellers-content .section-header .theme-btn i {margin-inline-start: 3px;}
+    .best-sellers-content .section-header .theme-btn i svg {
+        width: 10px;
+        height: 10px;
+    }
     .hero-content .group-btns {
         width: 100%;
         margin-inline: auto;
     }
+    .collection-banner .section-content .theme-btn {
+        width: 100%;
+    }
+    .collection-banner .section-content .section-header h2 {
+        font-size: 22px;
+        line-height: 36px;
+        font-weight: 600;
+    }
+    .collection-banner .section-content .section-header p {
+        margin-block: 10px;
+        font-size: 15px;
+    }
+    .footer-middle {background: #FAFAFC;}
     .footer-middle .section-content {
         flex-direction: column;
+        gap: 0;
+    }
+    .footer-middle .section-content .footer-col + .footer-col {
+        border-top: 1px solid rgba(var(--theme-black-rgb), .05);
     }
     .footer-middle .section-content .footer-col summary {
         pointer-events: all;
         cursor: pointer;
-        font-size: 18px;
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--theme-black);
         display: flex;
-        padding: 8px;
+        padding: 20px 0;
         margin-bottom: 0;
-        border-bottom: 1px solid rgba(var(--theme-black-rgb), .1);
     }
     .footer-middle .section-content .footer-col summary::before {
         position: absolute;
         content: '+';
+        font-weight: 400;
         top: 50%;
         right: 15px;
         transform: translateY(-50%);
-        color: var(--theme-gray);
     }
     .footer-middle .section-content .footer-col[open] summary::before {
         content: '-';
     }
     .footer-middle .section-content .footer-col>ul {
-        padding: 10px;
+        padding: 10px 5px 0;
         max-height: 0;
         transition: max-height var(--default-transition);
     }
@@ -1575,7 +1624,12 @@ header {
         max-height: 400px;
     }
     .footer-middle .section-content .footer-col ul {
-        padding-block: 10px 20px;
+        padding-block: 0 10px;
+    }
+    .footer-middle .section-content .footer-col ul>li + li {margin-top: 8px;}
+    .footer-middle .section-content .footer-col ul>li>a {
+        font-size: .9rem;
+        color: var(--theme-ash-2);
     }
     .contact-content ul>li {
         flex-basis: calc(50% - 16px);

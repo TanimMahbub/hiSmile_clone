@@ -482,7 +482,7 @@ header {
 
 .hamburger-wrapper {
     display: flex;
-    width: 50px;
+    width: 40px;
     padding: 21px 6px;
     border-radius: 4px;
     background: var(--cw);
@@ -519,6 +519,7 @@ header {
     background: var(--theme-gray);
     transition: bottom 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
 }
+
 
 .hamburger-menu:after {
     content: "";
@@ -1539,7 +1540,6 @@ header {
         width: 50%;
     }
     .subscribe-section .section-content {padding: 15px;}
-    .subscribe-section .section-content form {width: 100%;}
     .footer-bottom {
         margin-top: 20px;
     }
@@ -1598,6 +1598,7 @@ header {
         font-weight: 400;
         text-wrap: wrap;
     }
+    .subscribe-section .section-content form {width: 100%;}
     .footer-middle {background: #FAFAFC;}
     .footer-middle .section-content {
         flex-direction: column;
@@ -1613,7 +1614,7 @@ header {
         font-weight: 400;
         color: var(--theme-black);
         display: flex;
-        padding: 20px 0;
+        padding: 20px;
         margin-bottom: 0;
     }
     .footer-middle .section-content .footer-col summary::before {
@@ -1628,6 +1629,7 @@ header {
         content: '-';
     }
     .footer-middle .section-content .footer-col>ul {
+        margin-inline-start: 20px;
         padding: 10px 5px 0;
         max-height: 0;
         transition: max-height var(--default-transition);
@@ -1643,11 +1645,31 @@ header {
         font-size: .9rem;
         color: var(--theme-ash-2);
     }
+    .footer-middle .container-xl {padding-inline: 0;}
+    .footer-bottom {margin-top: 0;}
     .contact-content ul>li {
         flex-basis: calc(50% - 16px);
     }
 }
 
+@media(max-width: 414px) {
+    .hamburger-wrapper {
+        width: 35px;
+        padding: 15px 6px;
+        top: 34px;
+    }
+    .focus .hamburger-wrapper {left: calc(100% - 20px);border-radius: 50%;}
+    .hamburger-menu:before {bottom: 8px;}
+    .hamburger-menu:after {top: 8px;}
+    .hero-content p {
+        margin: 10px 0;
+        font-size: .9rem;
+    }
+    .hero-content h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
 @media(max-width: 390px) {
     .contact-content ul>li {
         flex-basis: 100%;

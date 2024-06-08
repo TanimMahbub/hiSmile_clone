@@ -1068,56 +1068,53 @@ header {
 /* insta-block end */
 
 /* footer start */
-.subscribe-section {
-    .section-content {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        
-        gap: 30px;
-        padding: 50px 40px;
-        color: var(--cw);
-        
-        h2,p,form {flex: 1}
-        h2 {
-            color: var(--cw);
-            font-size: 26px;
-            line-height: 36px;
-            text-wrap: balance;
-        }
-        p {
-            color: var(--cw);
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 26px;
-            text-wrap: balance;
-        }
-        
-        form {
-            display: flex;
-            align-items: center;
-            padding: 3px 0 3px 3px;
-            border-radius: 8px;
-            input {
-                width: calc(100% - 50px);
-                height: 42px;
-                border: none;
-                padding: 15px;
-                font-size: 16px;
-                font-weight: 600;
-                border-radius: 6px;
-            }
-            button {
-                width: 50px;
-                height: 42px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-    }
+.subscribe-section .section-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+    gap: 30px;
+    padding: 50px 40px;
+    color: var(--cw);
+}
+.subscribe-section .section-content :is(h2,p,form) {flex: 1}
+.subscribe-section .section-content h2 {
+    font-size: 26px;
+    line-height: 36px;
+    text-wrap: balance;
+}
+
+.subscribe-section .section-content p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 26px;
+    text-wrap: balance;
+}
+
+.subscribe-section .section-content form {
+    display: flex;
+    align-items: center;
+    padding: 3px 0 3px 3px;
+    border-radius: 8px;
+}
+
+.subscribe-section .section-content form input {
+    width: calc(100% - 50px);
+    height: 42px;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+}
+.subscribe-section .section-content form button {
+    width: 50px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-middle {
@@ -1386,14 +1383,12 @@ header {
             align-items: center;
         }
     }
-    .subscribe-section {
-        .section-content {
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            gap: 10px;
-            padding: 30px;
-        }
+    .subscribe-section .section-content {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        padding: 30px;
     }
     .footer-middle {
         .section-content {

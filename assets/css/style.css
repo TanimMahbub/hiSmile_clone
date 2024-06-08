@@ -1538,6 +1538,8 @@ header {
     .insta-block .section-content ul>li {
         width: 50%;
     }
+    .subscribe-section .section-content {padding: 15px;}
+    .subscribe-section .section-content form {width: 100%;}
     .footer-bottom {
         margin-top: 20px;
     }

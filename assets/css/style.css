@@ -3,6 +3,7 @@
     --theme-primary: #EC008C;
     --theme-secondary: #007AFF;
     --theme-ash: #F2F2F7;
+    --theme-ash-2: #636366;
     --theme-gray: #2C2C2E;
     --theme-black: #000;
     --theme-black-2: #1c1c1e;
@@ -12,6 +13,7 @@
     --theme-primary-rgb: 236, 0, 140;
     --theme-secondary-rgb: 255, 214, 119;
     --theme-ash-rgb: 242, 242, 247;
+    --theme-ash-2-rgb: 99,99,102;
     --theme-gray-rgb: 44, 44, 46;
     --theme-black-rgb: 0, 0, 0;
     --theme-black-rgb-2: 28, 28, 30;
@@ -52,6 +54,8 @@ img,video {
     vertical-align: top;
 }
 
+details summary::-webkit-details-marker {display: none}
+
 body{
     background:var(--body-bg);
     font-family: "Poppins", sans-serif;
@@ -80,6 +84,7 @@ body.overlay {
 .c-primary {color: var(--theme-primary) !important;}
 .c-secondary {color: var(--theme-secondary) !important;}
 .c-ash {color: var(--theme-ash) !important;}
+.c-ash-2 {color: var(--theme-ash-2) !important;}
 .c-gray {color: var(--theme-gray) !important;}
 .c-black {color: var(--theme-black) !important;}
 
@@ -87,6 +92,7 @@ body.overlay {
 .bg--primary {background: var(--theme-primary) !important;}
 .bg--secondary {background: var(--theme-secondary) !important;}
 .bg--ash {background: var(--theme-ash) !important;}
+.bg--ash-2 {background: var(--theme-ash-2) !important;}
 .bg--gray {background: var(--theme-gray) !important;}
 .bg--black {background: var(--theme-black) !important;}
 
@@ -708,6 +714,7 @@ header {
     line-height: 1.5;
     font-size: 1rem;
     margin-block: 15px 40px;
+    color: var(--theme-ash-2);
 }
 
 .hero-content .group-btns {
@@ -1491,6 +1498,11 @@ header {
     .hero-content h1 {
         font-size: 28px;
         line-height: 38px;
+    }
+    .hero-content .group-btns {
+        max-width: 100%;
+        width: 50%;
+        margin-inline: auto;
     }
     .section-header h2 {
         font-size: 22px;

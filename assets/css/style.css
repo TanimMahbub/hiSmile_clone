@@ -1543,12 +1543,6 @@ header {
         width: 100%;
         margin-inline: auto;
     }
-    .best-sellers-content .section-header {
-        flex-direction: column;
-    }
-    .best-sellers-content .section-header p {
-        margin-block: 5px;
-    }
     .footer-middle .section-content {
         flex-direction: column;
     }

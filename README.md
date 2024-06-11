@@ -13,12 +13,6 @@
  - [Hismile Help Centre](https://int.hismileteeth.com/pages/help)
  - [Contact Us](https://int.hismileteeth.com/pages/contact-us)
 
-### Resources
- - [Accordion for footer](https://codepen.io/Mamboleoo/pen/QWEpLqm)
- - [Custom Scrollbar theme](https://vickey-dev.github.io/scroll-themes-overlayScrollbars/)
- - [mmenu alternative 1](https://github.com/damianwajer/ml-stack-nav)
- - [mmenu alternative 2](https://www.jqueryscript.net/menu/Simple-Lightweight-Off-canvas-Menu-Plugin-MA5-Mobile-Menu.html)
-
 ---
 
 | hiSmile  | hi😊 |

@@ -61,6 +61,7 @@ body{
     background:var(--body-bg);
     font-family: "Poppins", sans-serif;
     color:var(--theme-black);
+    overflow: auto;
 }
 
 body.overlay {
@@ -81,11 +82,6 @@ body.overlay {
     opacity: 0;
     visibility: hidden;
     transition: all var(--default-transition) .2s;
-}
-
-.overlay .wrapper::before {
-    opacity: 1;
-    visibility: visible;
 }
 
 .f1 {font-family: "Poppins", sans-serif !important;}
@@ -559,6 +555,7 @@ header {
 }
 
 .mobile-menu {
+    display: none;
     max-width: 329px;
     width: 90vw;
     height: calc(100vh - 86px);
@@ -2526,6 +2523,10 @@ form .inputs {
     .sp-t {padding-top: 80px;}
     .sp-b {padding-bottom: 80px;}
     .sp-y {padding-block: 80px;}
+    .overlay .wrapper::before {
+        opacity: 1;
+        visibility: visible;
+    }
     .menu-wrapper {
         margin-inline: -15px;
         padding-inline: 10px;

@@ -286,51 +286,14 @@ updateDetailsState();
 window.addEventListener('resize', updateDetailsState);
 
 /**
- * mobile-menu accordion for mobile view
- */
-const parentLi = document.querySelectorAll('.has-child > a')
-parentLi.forEach(e => {
-    e.addEventListener('pointerdown', () => {
-        e.removeAttribute('href')
-        let parentItem = (level) => level.closest('.has-child')
-        let childMenu = (level) => level.closest('.has-child').querySelector('.mega-menu-container')
-        parentItem(e).classList.toggle("open")
-        parentLi.forEach(li => {
-            if(parentItem(li) !== parentItem(e)) {
-                parentItem(li).classList.remove('open')
-                childMenu(li).style.maxHeight = null
-            }
-        });
-        
-        if(parentItem(e).classList.contains('open')) {
-            childMenu(e).style.maxHeight = childMenu(e).scrollHeight + "px"
-        } else {
-            childMenu(e).style.maxHeight = null
-        }
-        
-    })
-});
-
-/**
- * dynamic height of mobile-menu
- */
-const othersHeight = document.querySelectorAll('.mm-header, .mm-footer')
-let getHeights = 0
-othersHeight.forEach(e => {
-    getHeights += e.scrollHeight
-    const elementStyle = window.getComputedStyle(e);
-    getHeights += parseFloat(elementStyle.getPropertyValue('margin-top')) + parseFloat(elementStyle.getPropertyValue('margin-bottom'));
-})
-document.querySelector('.mobile-menu menu').style.setProperty('--othersHeight', `${getHeights}px`)
-
-/**
 * HAMBURGER & NAV
 */
 let hamburger = document.querySelector('.hamburger-wrapper')
 let hamburgerMenu = document.querySelector('.hamburger-menu')
 let mainNav = document.querySelector('.mobile-menu')
 
-hamburger.addEventListener('pointerdown', () => {
+hamburger.addEventListener('pointerdown', (e) => {
+    e.stopPropagation()
     hamburgerMenu.classList.toggle('animate')
     mainNav.classList.toggle('focus')
     document.body.classList.toggle('overlay')
@@ -352,6 +315,43 @@ document.addEventListener('keydown', e => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    let mmTriger = document.querySelectorAll('.menu-item')
+    mmTriger.forEach((t)=> {
+        t.addEventListener('click', (e)=>{
+            e.stopPropagation()
+            const targetMenu = document.getElementById(e.currentTarget.dataset.target);
+            const parentMenu = e.target.closest('.menu-level');
+
+            if (targetMenu && parentMenu) {
+                targetMenu.style.transform = 'translateX(0)';
+                parentMenu.style.transform = 'translateX(-100%)';
+
+                const title = e.target.textContent;
+                const header = targetMenu.querySelector('.menu-header .menu-title');
+                if (header) {
+                    header.textContent = title;
+                }
+                targetMenu.dataset.previous = parentMenu.id;
+            }
+        })
+    })
+
+    let backBtn = document.querySelectorAll('.back-button')
+    backBtn.forEach((b)=>{
+        b.addEventListener('click', (e)=>{
+            e.stopPropagation()
+            const currentMenu = e.target.closest('.menu-level');
+            const previousMenuId = currentMenu.dataset.previous;
+            const previousMenu = document.getElementById(previousMenuId);
+
+            if (currentMenu && previousMenu) {
+                currentMenu.style.transform = 'translateX(100%)';
+                previousMenu.style.transform = 'translateX(0)';
+            }
+        })
+    })
+});
 
 // text limit
 function applyTextLimit(className) {

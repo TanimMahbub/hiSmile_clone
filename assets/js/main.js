@@ -265,6 +265,27 @@ document.addEventListener('DOMContentLoaded', ()=> {
             xtraQueryBtn.classList.add('d-none');
         });
     }
+
+    const hsPlaceholder = document.querySelectorAll('.hs-placeholder');
+    if (hsPlaceholder) {
+        hsPlaceholder.forEach((e)=>{
+            const emailInput = e.querySelector('input[type="email"]');
+            if (emailInput) {
+                const spanElement = e.querySelector('.input-placeholder');
+                emailInput.addEventListener('focus', function() {
+                    spanElement.classList.add('isFocused');
+                });
+                emailInput.addEventListener('blur', function() {
+                    if (emailInput.value.trim() === '') {
+                        spanElement.classList.remove('isFocused');
+                    }
+                });
+                if (emailInput.value.trim() !== '') {
+                    spanElement.classList.add('isFocused');
+                }
+            }
+        })
+    }
 });
     
     

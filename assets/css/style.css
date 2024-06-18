@@ -846,10 +846,10 @@ header {
 }
 
 .hero-3 form input {
-    width: calc(100% - 50px);
+    width: 100%;
     height: 42px;
     border: none;
-    padding: 15px;
+    padding: 15px 15px 10px;
     font-size: 14px;
     font-weight: 400;
     border-radius: 6px;
@@ -2184,27 +2184,52 @@ header {
 .subscribe-section .section-content form {
     display: flex;
     align-items: center;
-    padding: 3px 0 3px 3px;
     border-radius: 8px;
 }
 
 .subscribe-section .section-content form input {
     width: calc(100% - 50px);
-    height: 42px;
+    height: 45px;
     border: none;
-    padding: 15px;
+    padding: 15px 15px 10px;
     font-size: 14px;
     font-weight: 400;
     border-radius: 6px;
+    font-weight: 500;
+    color: var(--theme-black);
 }
 
 .subscribe-section .section-content form button {
     width: 50px;
-    height: 42px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--theme-ash-2);
+}
+
+.hs-placeholder {
+    position: relative;
+    width: calc(100% - 50px);
+    padding: 10px 0 3px 3px;
+}
+
+.hs-placeholder input {width: 100% !important;}
+
+.input-placeholder {
+    position: absolute;
+    color: #636366;
+    font-size: 12px;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .15s ease;
+    pointer-events: none;
+}
+
+.input-placeholder.isFocused {
+    top: 0;
+    transform: translateY(30%);
 }
 
 .footer-middle .section-content {

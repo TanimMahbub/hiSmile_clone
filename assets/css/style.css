@@ -18,9 +18,79 @@
     --theme-black-rgb: 0, 0, 0;
     --theme-black-rgb-2: 28, 28, 30;
     --cw-rgb: 255, 255, 255;
+
+    --f1: 'Pulp Display';
+    --f2: 'Circular Std Book';
+    --f3: 'Circular Std';
+    --f4: 'Avenir Next Cyr';
     
     --margin-top-main: ;
     --default-transition: .3s ease;
+}
+
+@font-face {
+    font-family: 'Circular Std Book';
+    src: url('/assets/fonts/CircularStd-Book.eot');
+    src: url('/assets/fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/CircularStd-Book.woff2') format('woff2'),
+        url('/assets/fonts/CircularStd-Book.woff') format('woff'),
+        url('/assets/fonts/CircularStd-Book.ttf') format('truetype'),
+        url('/assets/fonts/CircularStd-Book.svg#CircularStd-Book') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pulp Display';
+    src: url('/assets/fonts/PulpDisplay-Regular.eot');
+    src: url('/assets/fonts/PulpDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/PulpDisplay-Regular.woff2') format('woff2'),
+        url('/assets/fonts/PulpDisplay-Regular.woff') format('woff'),
+        url('/assets/fonts/PulpDisplay-Regular.ttf') format('truetype'),
+        url('/assets/fonts/PulpDisplay-Regular.svg#PulpDisplay-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pulp Display';
+    src: url('/assets/fonts/PulpDisplay-Medium.eot');
+    src: url('/assets/fonts/PulpDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/PulpDisplay-Medium.woff2') format('woff2'),
+        url('/assets/fonts/PulpDisplay-Medium.woff') format('woff'),
+        url('/assets/fonts/PulpDisplay-Medium.ttf') format('truetype'),
+        url('/assets/fonts/PulpDisplay-Medium.svg#PulpDisplay-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('/assets/fonts/CircularStd-Medium.eot');
+    src: url('/assets/fonts/CircularStd-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/CircularStd-Medium.woff2') format('woff2'),
+        url('/assets/fonts/CircularStd-Medium.woff') format('woff'),
+        url('/assets/fonts/CircularStd-Medium.ttf') format('truetype'),
+        url('/assets/fonts/CircularStd-Medium.svg#CircularStd-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir Next Cyr';
+    src: url('/assets/fonts/AvenirNextCyr-Regular.eot');
+    src: url('/assets/fonts/AvenirNextCyr-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/AvenirNextCyr-Regular.woff2') format('woff2'),
+        url('/assets/fonts/AvenirNextCyr-Regular.woff') format('woff'),
+        url('/assets/fonts/AvenirNextCyr-Regular.ttf') format('truetype'),
+        url('/assets/fonts/AvenirNextCyr-Regular.svg#AvenirNextCyr-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -58,9 +128,9 @@ img,video {
 details summary::-webkit-details-marker {display: none}
 
 body{
-    background:var(--body-bg);
-    font-family: "Poppins", sans-serif;
-    color:var(--theme-black);
+    background: var(--body-bg);
+    font-family: var(--f2);
+    color: var(--theme-black);
     overflow: auto;
 }
 
@@ -84,14 +154,13 @@ body.overlay {
     transition: all var(--default-transition) .2s;
 }
 
-.f1 {font-family: "Poppins", sans-serif !important;}
-.fw-3 {font-weight: 300 !important;}
-.fw-4 {font-weight: 400 !important;}
-.fw-5 {font-weight: 500 !important;}
-.fw-6 {font-weight: 600 !important;}
-.fw-7 {font-weight: 700 !important;}
-.fw-8 {font-weight: 800 !important;}
-
+.f1 {
+    font-family: var(--f1) !important;
+    font-weight: 500 !important;
+}
+.f2 {font-family: var(--f2) !important;}
+.f3 {font-family: var(--f3) !important;}
+.f4 {font-family: var(--f4) !important;}
 
 .c-primary {color: var(--theme-primary) !important;}
 .c-secondary {color: var(--theme-secondary) !important;}
@@ -129,11 +198,12 @@ body.overlay {
 }
 
 .theme-btn, .icon-btn {
+    font-family: var(--f3);
     padding: 15px 30px;
     font-size: 14px;
     display: inline-flex;
     border-radius: 32px;
-    font-weight: 600;
+    
     transition: all var(--default-transition);
 }
 
@@ -155,7 +225,7 @@ body.overlay {
 .icon-btn {
     padding: 12px 25px;
     background: var(--body-bg);
-    color: var(--theme-black);
+    color: var(--theme-ash-2);
     font-size: 14px;
     align-items: center;
     border-radius: 32px;
@@ -172,29 +242,34 @@ body.overlay {
 /* other-page-header start */
 .other-page-header {padding: 80px 0;}
 .other-page-header h1 {
-    font-size: 48px;
+    font-size: 3rem;
+    line-height: 1.25;
+    letter-spacing: -.03em;
+    font-family: var(--f1);
+    font-weight: 500;
     margin-bottom: 15px;
 }
 
 .other-page-header p {
-    font-size: 15px;
-    line-height: 30px;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 /* other-page-header end */
 
 /* section-header start */
 .section-header h2 {
-    font-size: 32px;
-    font-weight: 500;
+    font-size: 2rem;
     line-height: 38px;
     color: var(--theme-black-2);
     text-wrap: balance;
 }
 .section-header p {
+    font-family: var(--f4);
     text-wrap: balance;
     font-size: 16px;
     line-height: 26px;
     margin-block: 10px 20px;
+    color: var(--theme-ash-2);
 }
 /* section-header end */
 
@@ -443,6 +518,7 @@ header {
     padding: 16px;
     font-weight: 500;
     letter-spacing: .1rem;
+    font-family: var(--f3);
     transition: all var(--default-transition);
 }
 
@@ -474,12 +550,11 @@ header {
 }
 .mm-col.mm-ul li {margin-top: 15px;}
 .mm-col.mm-ul a {
-    font-size: 14px;
-    color: var(--theme-gray);
+    font-size: 16px;
+    color: var(--theme-ash-2);
 }
 .mm-col h2 {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 .mm-col figure > a img {
@@ -574,6 +649,7 @@ header {
 }
 
 .mm {
+    font-family: var(--f4);
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -616,7 +692,10 @@ header {
 }
 .menu-level.level-1 li button i {margin-inline-start: auto;}
 .menu-level.level-1 li button,
-.menu-level.level-1 li a {letter-spacing: .1rem;font-weight: 500;}
+.menu-level.level-1 li a {
+    letter-spacing: .1rem;
+    font-weight: 500;
+}
 .menu-level.level-1 li button i,
 .menu-level.level-1 li a > i {
     line-height: 10px;
@@ -639,6 +718,8 @@ header {
 .level-2 .mm-col.mm-ul li a {
     padding: 22px 20px;
     display: flex;
+    font-size: 16px;
+    color: var(--theme-ash-2);
 }
 
 .level-2 .mm-col h2 {
@@ -666,9 +747,8 @@ header {
 }
 
 .menu-header .menu-title {
-    font-weight: bold;
+    font-family: var(--f3);
     pointer-events: none;
-    font-weight: 500;
     letter-spacing: .1em;
     color: var(--theme-black-2);
 }
@@ -720,8 +800,10 @@ header {
 }
 
 .hero-content h1 {
-    font-size: 44px;
+    font-family: 'Pulp Display';
+    font-size: 3rem;
     line-height: 60px;
+    text-wrap: balance;
 }
 
 .hero-content p {
@@ -729,6 +811,7 @@ header {
     font-size: 1rem;
     margin-block: 15px 40px;
     color: var(--theme-ash-2);
+    text-wrap: balance;
 }
 
 .hero-content .group-btns {
@@ -820,7 +903,11 @@ header {
 }
 
 .hero-content-3 h1 {
+    font-family: var(--f1);
     font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -.03em;
     margin: 30px 0;
 }
 .hero-content-3 p {
@@ -866,7 +953,11 @@ header {
 
 .hero-4 .section-content h1,
 .hero-5 .section-content h1 {
+    font-family: var(--f1);
     font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -.03em;
     color: var(--cw);
     margin: 100px 0 0 100px;
 }
@@ -899,9 +990,10 @@ header {
 }
 
 .hero-6-content h1 {
+    font-family: var(--f1);
     font-size: 3rem;
     line-height: 3.625rem;
-    font-weight: 600;
+    letter-spacing: -.03em;    
     margin: 30px 0;
     text-wrap: balance;
 }
@@ -1012,9 +1104,11 @@ header {
 }
 
 .profile-info > h2 {
-    font-size: 1.7rem;
+    font-family: "Newsreader", serif;
+    font-size: 1.8rem;
     font-weight: 400;
-    line-height: 130%;
+    line-height: 125%;
+    letter-spacing: -.0375rem;
     margin: 15px 0 20px;
     text-wrap: balance;
 }
@@ -1022,11 +1116,12 @@ header {
 .profile-info > p {
     font-size: 14px;
     text-wrap: balance;
+    color: var(--theme-ash-2);
 }
 
 .profile-info > a {
     font-size: 14px;
-    font-weight: 600;
+    
     color: var(--theme-black);
     display: inline-flex;
     margin-top: 30px;
@@ -1053,7 +1148,7 @@ header {
 .swiper-button-prev::after {
     font-size: 18px;
     color: var(--theme-black);
-    font-weight: 600;
+    
 }
 
 .swiper-button-disabled {
@@ -1519,15 +1614,17 @@ header {
 }
 
 .txt-media-block .section-content h2 {
-    font-size: 28px;
+    font-family: var(--f1);
+    font-size: 2.5rem;
     line-height: 42px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--theme-gray);
     text-wrap: balance;
 }
 
 .txt-media-block .section-content h3 {
-    font-size: 18px;
+    font-family: var(--f1);
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--theme-gray);
     text-wrap: balance;
@@ -1535,7 +1632,7 @@ header {
 }
 
 .txt-media-block .section-content p {
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 26px;
     text-wrap: balance;
     margin-top: 15px;
@@ -1568,7 +1665,7 @@ header {
     border: none;
     padding: 15px;
     font-size: 16px;
-    font-weight: 600;
+    
     border-radius: 6px;
 }
 
@@ -1752,7 +1849,7 @@ header {
 /* single-product start */
 .product-header > h4 {
     font-size: .75rem;
-    font-weight: 600;
+    
     letter-spacing: .1em;
     color: #636366;
     text-transform: uppercase;
@@ -2058,6 +2155,7 @@ header {
     max-width: 400px;
 }
 
+.collection-banner .section-content .section-header h2 {font-size: 2.25rem;}
 .collection-banner .section-content .section-header h2,
 .collection-banner .section-content .section-header p {
     text-wrap: balance;
@@ -2069,7 +2167,8 @@ header {
 }
 
 .collection-banner .section-content .section-header p {
-    margin-block: 20px 30px;
+    margin-block: 10px 30px;
+    color: var(--theme-black-2);
 }
 
 .collection-banner .section-content .section-header .theme-btn:hover {
@@ -2087,7 +2186,7 @@ header {
     padding: 4px 18px 5px 20px;
     border-radius: 24px;
     font-size: 14px;
-    font-weight: 600;
+    
 }
 /* collection-banner end */
 
@@ -2169,8 +2268,8 @@ header {
 }
 
 .subscribe-section .section-content h2 {
-    font-size: 26px;
-    line-height: 36px;
+    font-size: 1.5rem;
+    line-height: 1.25;
     text-wrap: balance;
 }
 
@@ -2240,8 +2339,9 @@ header {
 
 .footer-middle .section-content .footer-col summary {
     position: relative;
-    font-size: 20px;
-    font-weight: 600;
+    font-family: var(--f3);
+    font-size: 1rem;
+    line-height: 1;
     margin-bottom: 15px;
     color: var(--theme-gray);
     display: inline-flex;
@@ -2250,10 +2350,6 @@ header {
 
 .footer-middle .section-content .footer-col summary::marker {
     content: '';
-}
-
-.footer-middle .section-content .footer-col ul {
-    margin-inline-start: 5px;
 }
 
 .footer-middle .section-content .footer-col ul li {
@@ -2268,6 +2364,7 @@ header {
     font-size: 14px;
     display: inline-flex;
     align-items: center;
+    color: var(--theme-ash-2);
 }
 
 .footer-middle .section-content .footer-col ul li a i {
@@ -2285,9 +2382,9 @@ header {
 
 .footer-bottom {
     margin-top: 50px;
-    background: var(--cw);
+    background: var(--theme-ash);
     padding-block: 10px;
-    color: var(--theme-black);
+    color: var(--theme-ash-2);
 }
 
 .payment-methods {
@@ -2357,9 +2454,9 @@ header {
 }
 
 .short-info-block p {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 26px;
-    color: var(--theme-ash-2);
+    color: rgb(142,142,147);
 }
 /* products-block end */
 
@@ -3044,7 +3141,7 @@ form .inputs {
     .collection-banner .section-content .section-header h2 {
         font-size: 22px;
         line-height: 36px;
-        font-weight: 600;
+        
     }
     .collection-banner .section-content .section-header p {
         margin-block: 10px;
